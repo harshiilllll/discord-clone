@@ -1,0 +1,346 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body{
+  overflow: hidden;
+}
+
+main {
+  display: grid;
+  height: 100vh;
+  background-color: #36393f;
+  grid-template-columns: 70px 240px 1fr 240px;
+  grid-template-rows: 50px 1fr;
+}
+
+/* Server__section start */
+
+.server__section {
+  background-color: #202225;
+  grid-row: 1/3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.home,
+.server__logo {
+  height: 50px;
+  width: 50px;
+  background-color: #36393f;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  overflow: hidden;
+  object-fit: cover;
+  transition: all 175ms ease-in-out;
+  -webkit-transition: all 175ms ease-in-out;
+  -moz-transition: all 175ms ease-in-out;
+  -ms-transition: all 175ms ease-in-out;
+  -o-transition: all 175ms ease-in-out;
+  position: relative;
+}
+
+.white__line{
+  position: relative;
+}
+
+.white__line:hover::before{
+  height: 25px;
+}
+
+.white__line::before{
+  content: '';
+  height: 10px;
+  width: 4px;
+  background-color: white;
+  border-radius:0 10px 10px 0;
+  position: absolute;
+  left: -10px;
+  bottom: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -webkit-border-radius:0 10px 10px 0;
+  -moz-border-radius:0 10px 10px 0;
+  -ms-border-radius:0 10px 10px 0;
+  -o-border-radius:0 10px 10px 0;
+  transition: all .3s ease;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -ms-transition: all .3s ease;
+  -o-transition: all .3s ease;
+}
+
+.hidden::before{
+  transform: scale(0) translateY(-50%);
+  transition: all .3s ease;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -ms-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  -webkit-transform: scale(0) translateY(-50%);
+  -moz-transform: scale(0) translateY(-50%);
+  -ms-transform: scale(0) translateY(-50%);
+  -o-transform: scale(0) translateY(-50%);
+  transform-origin: top;
+}
+
+.hidden:hover::before{
+  transform: scale(1) translateY(-50%);
+  -webkit-transform: scale(1) translateY(-50%);
+  -moz-transform: scale(1) translateY(-50%);
+  -ms-transform: scale(1) translateY(-50%);
+  -o-transform: scale(1) translateY(-50%);
+}
+
+.home:hover,
+.server__logo:hover {
+  border-radius: 35%;
+  -webkit-border-radius: 35%;
+  -moz-border-radius: 35%;
+  -ms-border-radius: 35%;
+  -o-border-radius: 35%;
+  background-color: royalblue;
+}
+
+.home__seperator {
+  height: 1.5px;
+  width: 30px;
+  background-color: #2d2f32;
+  margin-block-start: 10px;
+  margin-block-end: 5px;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+}
+
+.-m-1 {
+  margin-block: 5px;
+}
+
+.server__logo {
+  margin-block: 5px;
+}
+
+.server__icon {
+  color: #3ba55d;
+}
+
+.server__icon:hover {
+  background-color: #3ba55d;
+  color: #fff;
+}
+
+/* //server__section end */
+
+/* Topbar Starts */
+
+.topbar {
+  grid-column: 3/5;
+  border-bottom: 1px solid #26272c;
+  padding-inline: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+}
+
+.topbar svg{
+  margin-bottom: 2px;
+  color: #72767d;
+}
+
+.topbar .heading{
+  font-weight: 900;
+  letter-spacing: 1px;
+  margin-left: 10px;
+  font-size: 15px;
+  cursor: default;
+}
+
+.topbar__icons{
+  /*justify-content: space-between;*/
+}
+
+.topbar__icons svg{
+  margin-inline-start: 15px;
+  cursor: pointer;
+  color: #b9bbbe;
+}
+
+.topbar__icons svg:hover{
+  color: #dedede;
+}
+
+.active{
+  color: #fff !important;
+}
+
+.topbar__icons input{
+  background-color: #202225;
+  color: #eee;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  padding:0 5px;
+  font-size: 13px;
+  height: 24px;
+  width: 150px;
+  margin-inline-start: 15px;
+  transition: all .3s ease;
+}
+
+.topbar__icons input:focus{
+  width: 250px;
+}
+
+.topbar__icons input::placeholder{
+  color: #72767d;
+}
+
+/* Topbar Ends */
+
+/* Chat Names Start */
+
+.chat__names {
+  background-color: #2f3136;
+  grid-row: 1/3;
+  grid-column: 2/3;
+  display: grid;
+  grid-template-rows: 50px 1fr 55px;
+}
+
+.server__name {
+  border-bottom: 1px solid #222427;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all .3s ease;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -ms-transition: all .3s ease;
+  -o-transition: all .3s ease;
+}
+
+.server__name:hover{
+  background-color: #32353a;
+}
+
+.server__name img{
+  height: 10px;
+  width: 10px;
+  cursor: pointer;
+}
+
+.user__profile {
+  border-top: 2px solid #36373b;
+  padding: 10px 10px;
+  display: grid;
+  grid-template-columns: 40px 1fr 32px 32px 32px;
+  grid-template-rows: 20px 20px;
+  color: #fff;
+}
+
+.user__profile svg{
+  color: #b9bbbe;
+  margin-bottom: 5px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  height: 34px;
+  width: 34px;
+  transition: all .1s step-start;
+  -webkit-transition: all .1s step-start;
+  -moz-transition: all .1s step-start;
+  -ms-transition: all .1s step-start;
+  -o-transition: all .1s step-start;
+}
+
+.user__profile svg:hover{
+  background-color: #3b3f44;
+  color: #fff;
+}
+
+.user__avatar{
+  grid-column: 1/2;
+  grid-row: 1/-1;
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.user__name{
+  font-size: 14px;
+  grid-row: 1/2;
+  grid-column: 2/3;
+}
+
+.user__status{
+  font-size: 11px;
+  grid-row: 2/3;
+  grid-column: 2/3;
+  color: #b9bbbe;
+}
+
+.mic__icon{
+  grid-row: 1/3;
+  grid-column: 3/4;
+  place-self: center;
+}
+
+.speaker__icon{
+  grid-row: 1/3;
+  grid-column: 4/5;
+  place-self: center;
+}
+
+.settings__icon{
+  grid-row: 1/3;
+  grid-column: 5/6;
+  place-self: center;
+}
+
+
+/* Chat Nmaes Ends */
+
+
+
+
+
+
+
+.members__section {
+  background-color: #2f3136;
+}
